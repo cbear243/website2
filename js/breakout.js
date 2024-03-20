@@ -42,6 +42,10 @@ function drawPaddle() {
     ctx.closePath()
 }
 
+
+
+
+drawPaddle()
 drawBall()
 
 
