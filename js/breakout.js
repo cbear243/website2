@@ -43,7 +43,11 @@ function drawPaddle() {
 }
 
 
-
+// Draw everything
+function draw() {
+    drawPaddle()
+    drawBall()
+}
 
 drawPaddle()
 drawBall()
