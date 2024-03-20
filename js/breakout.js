@@ -4,6 +4,8 @@ closeBtn = document.getElementById('close-btn')
 canvas = document.getElementById('canvas')
 ctx = canvas.getContext('2d')
 
+score = 0
+
 // Create ball properties
 ball = {
     x: canvas.width / 2,
@@ -43,14 +45,20 @@ function drawPaddle() {
 }
 
 
+// Draw score on canvas
+function drawScore() {
+
+
+    ctx.fillText(`Score: ${score}`, canvas.width-100, 30)
+}
+
 // Draw everything
 function draw() {
     drawPaddle()
     drawBall()
 }
 
-drawPaddle()
-drawBall()
+draw()
 
 
 // Rules open and close event handlers
