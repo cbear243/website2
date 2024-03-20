@@ -33,6 +33,8 @@ function drawBall() {
     ctx.closePath()
 }
 
+
+
 drawBall()
 
 
