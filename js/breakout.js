@@ -205,7 +205,7 @@ function showAllBricks() {
     bricks.forEach(column => {
         column.forEach(brick => {
             console.log("Hello")
-            brick.visibile = true
+            brick.visible = true
         })
     })
 }
