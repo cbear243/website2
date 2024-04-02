@@ -202,7 +202,7 @@ function increaseScore() {
 
 function showAllBricks() {
     console.log("showAllBricks()")
-    bricks.forEach(column => {
+    brick.forEach(column => {
         column.forEach(brick => {
             console.log("Hello")
             brick.visible = true
