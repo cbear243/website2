@@ -12,13 +12,6 @@ body {
     margin: 0;
     font-family: font-family: Georgia, serif;
 }
-body {
-    background: #444;
-    }
-    .play-btn {
-    width: 100px;
-    height: 100px;
-    background: radial-gradient( rgba(255, 0, 128, 0.8) 60%, rgba(255, 255, 255, 1) 62%);
 
 canvas {
     background-color: #f0f0f0;
@@ -39,6 +32,15 @@ h1 {
     color: white;
     border-radius: 5px;
 }
+
+.play-btn {
+    border: 0;
+    padding: 10px 20px;
+    border-radius: 5px;
+    width: 70px;
+    height: 30px;
+    position: absolute;
+    background: radial-gradient( rgba(255, 0, 128, 0.8) 70%, rgba(255, 255, 255, 1) 90%);
 
 .btn:hover {
     background: #222222;
