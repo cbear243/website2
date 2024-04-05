@@ -16,7 +16,7 @@ ball = {
     x: canvas.width / 2,
     y: canvas.height / 2,
     size: 10,
-    speed: 7,
+    speed: 10,
     dx: 4,
     dy: -4,
 }
@@ -236,7 +236,7 @@ function update() {
     movePaddle()
     draw()
     // if statement needed for start button
-    requestAnimationFrame(update)
+    // requestAnimationFrame(update)
 }
 
 update()
