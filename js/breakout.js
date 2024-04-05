@@ -1,6 +1,7 @@
 rulesBtn = document.getElementById('rules-btn')
 rules = document.getElementById('rules')
 closeBtn = document.getElementById('close-btn')
+playBtn = document.getElementById('play-btn')
 canvas = document.getElementById('canvas')
 ctx = canvas.getContext('2d')
 
