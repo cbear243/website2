@@ -236,7 +236,7 @@ function update() {
     movePaddle()
     draw()
     // if statement needed for start button
-    // requestAnimationFrame(update)
+    requestAnimationFrame(update)
 }
 
 update()
