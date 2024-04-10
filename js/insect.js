@@ -1,1 +1,1 @@
-const 
+const screens = document.querySelectorAll
