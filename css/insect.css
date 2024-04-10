@@ -27,3 +27,12 @@ body {
     align-items: center;
     justify-content: center;
 }
+
+.btn {
+    border: 0;
+    background-color: #ffffff;
+    color: #516dff;
+    padding: 15px 20px;
+    cursor: pointer;
+    font-family: inherit;
+}
