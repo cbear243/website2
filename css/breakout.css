@@ -34,6 +34,7 @@ h1 {
 }
 
 .play-btn {
+    cursor: pointer;
     border: 0;
     padding: 10px 20px;
     border-radius: 5px;
