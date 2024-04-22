@@ -1,0 +1,12 @@
+
+body {
+    background-color: #34495e;
+    color: #ffffff;
+}
+
+.figrue-container {
+    fill: transparent;
+    stroke: #ffffff;
+    stroke-width: 4px;
+    stroke-linecap: round;
+}
