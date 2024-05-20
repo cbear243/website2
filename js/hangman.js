@@ -34,6 +34,17 @@ function displayWord() {
     }
 }
 
+// Update the wrong letters
+function updateWrongLettersEl() {
+    console.log('Update Wrong')
+}
+
+// Show Notification
+function showNotification() {
+    notification.classList.add('show')
+}
+
+
 // Keydown letter press
 window.addEventListener('keydown', e => {
     if (e.keycode) >= 65 && e.keyCode <= 90) {
