@@ -238,6 +238,12 @@ function update() {
     draw()
     // if statement needed for start button
     requestAnimationFrame(update)
+    if (score == 45) {
+        drawWin()
+        ball.dx = 0
+        ball.dy = 0
+        ball.speed = 0
+    }
 }
 
 update()
