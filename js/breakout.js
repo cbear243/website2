@@ -253,3 +253,8 @@ closeBtn.addEventListener('click', () => {
 playBtn.addEventlistener('click', () => {
     rules.classList.remove('show')
 })
+
+//start game
+start.addEventListener('click', () => {
+    update()
+})
