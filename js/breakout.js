@@ -258,3 +258,11 @@ playBtn.addEventlistener('click', () => {
 start.addEventListener('click', () => {
     update()
 })
+
+//retry button
+retry.addEventListener('click', () => {
+    location.reload()
+    showAllBricks()
+    score = 0
+    clearRect()
+})
