@@ -48,5 +48,9 @@ h1 {
 }
 
 .wrong-letter-container p {
-    margin
+    margin: 0 0 5px;
+}
+
+.wrong-letters-container span {
+    
 }
