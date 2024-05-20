@@ -25,8 +25,9 @@ function displayWord() {
         </span>
         `).join('')
     }
-
     `
+    const innerWord = wordEl.innerText.replace(/\n/g, '')
+    console.log(wordEl.innerText)
 }
 
 displayWord()
