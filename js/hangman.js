@@ -1,6 +1,6 @@
 const wordEl = document.getElementById('word')
 const wrongLettersEl = document.getElementById('wrong-letters')
-const playAgainBtn = document.getElementById('play-again')
+const playAgainBtn = document.getElementById('play-button')
 const popup = document.getElementById('popup-container')
 const notification = document.getElementById('notification-container')
 const finalMessage = document.getElementById('final-message')
@@ -14,66 +14,122 @@ let selectedWord = word[selectedIndex]
 const correctLetters = []
 const wrongLetters = []
 
+
+
+let continueRunning = true
+
 // Show hidden word
 function displayWord() {
     wordEl.innerHTML = `
-    ${selectedWord
+      ${selectedWord
         .split('')
         .map(letter => `
-        <span class="letter">
-        ${correctLetters.includes(letter) ? letter : ''}
-        </span>
+          <span class="letter">
+            ${correctLetters.includes(letter) ? letter : ''}
+          </span>
         `).join('')
     }
     `
     const innerWord = wordEl.innerText.replace(/\n/g, '')
 
     if (innerWord == selectedWord) {
-        finalMessage innerText = 'Congradulations! You Won!'
+        finalMessage.innerText = 'Congratulations! You won!'
         popup.style.display = 'flex'
+        continueRunning = false
     }
 }
 
 // Update the wrong letters
 function updateWrongLettersEl() {
-    console.log('Update Wrong')
+    //display wrong letters
+    wrongLettersEl.innerHTML = `
+     ${wrongLetters.length > 0 ? '<p>Wrong</p>' : ''}
+     ${wrongLetters.map(letter => `<span>${letter}</span>`)}
+    `
+    //display different parts
+    figureParts.forEach((part, index) => {
+        const errors = wrongLetters.length
+
+        if (index < errors) {
+            part.style.display = 'block'
+        } else {
+            part.style.display = 'none'
+        }
+    })
+
+    //check if lost
+    if (wrongLetters.length == figureParts.length) {
+        finalMessage.innerText = `Unfortunately you lost! The word was: ${selectedWord}`
+        popup.style.display = 'flex'
+        continueRunning = false
+    }
+
+
+
+
 }
 
-// Show Notification
+// Show notification
 function showNotification() {
     notification.classList.add('show')
 
     setTimeout(() => {
-        notification.classList.remove('show')
+      notification.classList.remove('show')
     }, 2000)
 }
 
+// function endGame() {
+//     if (wrongLetters.length == figureParts.length)
+//     {
+//         wrongLettersEl.innerHTML = `
+//         ${wrongLetters.map(letter => `<span>${letter}</span>`)}
+//     }
+// }
 
 // Keydown letter press
 window.addEventListener('keydown', e => {
-    if (e.keycode) >= 65 && e.keyCode <= 90) {
+
+ if (continueRunning == true) {
+    if (e.keyCode >= 65 && e.keyCode <= 90) {
         const letter = e.key
 
-    if (selectedWord.includes(letter)) {
-        if (!correctLetters.includes(letter)) {
-            correctLetters.push(letter)
+        if (selectedWord.includes(letter)) {
+            if( !correctLetters.includes(letter)) {
+                correctLetters.push(letter)
 
+                displayWord()
+            }   else {
+                showNotification()
+            }
+        }   else {
+            if (!wrongLetters.includes(letter)) {
+                wrongLetters.push(letter)
 
-            displayWord()
-        } else {
-            showNotification()
+                updateWrongLettersEl()
+            } else {
+                showNotification()
+            }
         }
-      } else {
-        if (!wrongLetters.includes(letter)) {
-            wrongLetters.push(letter)
-
-            updateWrongLettersEl()
-        } else {
-            showNotification()
-        }
-      }
     }
+ }
 })
 
 
-displayWord()
+// Restart game and play again
+playAgainBtn.addEventListener('click', () => {
+    correctLetters.length = 0
+    wrongLetters.length = 0
+    selectedIndex = Math.floor(word.length * Math.random())
+    selectedWord = word[selectedIndex]
+
+    displayWord()
+
+    updateWrongLettersEl()
+
+    popup.style.display = 'none'
+
+    continueRunning = true
+})
+
+
+displayWord()aa
