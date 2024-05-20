@@ -82,8 +82,8 @@ h1 {
     bottom: 0;
     left: 0;
     right: 0;
-    display: flex;
-    //display: none;
+    /* display: flex; */
+    display: none;
     align-items: center;
     justify-content: center;
 }
@@ -103,4 +103,8 @@ h1 {
     margin-top: 20px;
     padding: 12px 20px;
     font-size: 16px;
+}
+
+.popup button:active {
+    transform: scale(0.98);
 }
