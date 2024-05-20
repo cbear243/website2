@@ -45,8 +45,10 @@ window.addEventListener('keydown', e => {
 
 
             displayWord()
+        } else {
+            showNotification()
         }
-    }
+      }
     }
 })
 
