@@ -3,6 +3,7 @@
 }
 
 body {
+    <link rel="stylesheet" href="css/index.css">
     background-color: #0095;
     display: flex;
     flex-direction: column;
